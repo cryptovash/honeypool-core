@@ -1,7 +1,7 @@
-const ethers = require('ethers');
-const { Assertion } = require('chai');
+const ethers = require("ethers");
+const { Assertion } = require("chai");
 
-Assertion.addMethod('equalish', function (value, difference = 10) {
+Assertion.addMethod("equalish", function (value, difference = 10) {
   var obj = this._obj;
 
   // TODO Fix bug even when it's a BigNumber
@@ -21,6 +21,6 @@ Assertion.addMethod('equalish', function (value, difference = 10) {
     `expected ${obj.toString()} to be within ${difference} of #{exp} but got #{act}`,
     `expected ${obj.toString()} to not be within #{act}`,
     value.toString(), // expected
-    obj.toString(), // actual
+    obj.toString() // actual
   );
 });

@@ -1,68 +1,68 @@
-# HoneyPool Core Smart Contracts
+# HoneyHNYP v3 - Pods Smart Contracts
 
-# Overview
-- [ControlledToken](/contracts/ControlledToken.sol)
-- [DrawBeacon](/contracts/DrawBeacon.sol)
-- [DrawBuffer](/contracts/DrawBuffer.sol)
-- [DrawCalculator](/contracts/DrawCalculator.sol)
-- [EIP2612PermitAndDeposit](/contracts/permit/EIP2612PermitAndDeposit.sol)
-- [PrizeDistributionBuffer](/contracts/PrizeDistributionBuffer.sol)
-- [PrizeDistributor](/contracts/PrizeDistributor.sol)
-- [PrizeSplitStrategy](/contracts/prize-strategy/PrizeSplitStrategy.sol)
-- [Reserve](/contracts/Reserve.sol)
-- [StakePrizePool](/contracts/prize-pool/StakePrizePool.sol)
-- [Ticket](/contracts/Ticket.sol)
-- [YieldSourcePrizePool](/contracts/prize-pool/YieldSourcePrizePool.sol)
+The smart contracts are a smart contract collection for HoneyPool.
 
-Periphery and supporting contracts:
+- Low Gas Fees
+- Higher Chances of Winning
 
-- https://github.com/cryptovash/honeypool-periphery
-- https://github.com/cryptovash/honeypool-oracle-timelocks
+## Setup
 
+Install dependencies:
 
-# Getting Started
-
-The project is made available as a NPM package.
-
-```sh
-$ yarn add @pooltogether/pooltogether-contracts
-```
-
-The repo can be cloned from Github for contributions.
-
-```sh
-$ git clone https://github.com/cryptovash/honeypool-core
-```
-
-```sh
+```bash
 $ yarn
 ```
 
-We use [direnv](https://direnv.net/) to manage environment variables.  You'll likely need to install it.
+Make sure you have `direnv` installed and copy `.envrc.example` to `.envrc`:
 
-```sh
-cp .envrc.example .envrc
+```bash
+$ cp .envrc.example .envrc
 ```
 
-To run fork scripts, deploy or perform any operation with a mainnet/testnet node you will need an Infura API key.
+Fill in your own values for `.envrc`, then run:
 
-# Testing
-
-We use [Hardhat](https://hardhat.dev) and [hardhat-deploy](https://github.com/wighawag/hardhat-deploy)
-
-To run unit & integration tests:
-
-```sh
-$ yarn test
+```bash
+$ direnv allow
 ```
 
-To run coverage:
+To setup the local Hardhat EVM, run:
 
-```sh
-$ yarn coverage
+```
+$ yarn hardhat node
 ```
 
-# Deployment
+Depending on the .enrvc setup the Hardhat EVM will be new blockchain or a mainnet fork.
 
-## Mainnet
-Deployment is maintained in a different [repo](https://github.com/cryptovash/honeypool-mainnet).
+## Overview
+
+The smart contracts are categorized into multiple categories
+
+### Primary
+
+The primary smart contracts are responsible for handling collective deposits and issuing HNYP rewards
+
+- Pod
+- TokenDrop
+
+### Factories
+
+The factory smart contracts are responsible for deploying new Pods associated TokenDrop
+
+- PodFactory
+- TokenDropFactory
+
+### Periphery
+
+The periphery smart contracts help handle secondary actions, like liquidating "bonus" rewards from LOOT boxes.
+
+- PodManager
+
+## Development
+
+The development, testing and deployment is handled via `hardhat`
+
+## Testing
+
+Run All Tests
+
+`yarn test`

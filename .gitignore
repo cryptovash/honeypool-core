@@ -1,0 +1,19 @@
+# Development Environment
+node_modules
+*-lock.json
+.env
+.envrc
+
+# Hardhat files
+cache
+artifacts
+data
+
+deployments/localhost
+
+# Testing
+coverage
+coverage.json
+
+# Development Notes
+*.dev.md
