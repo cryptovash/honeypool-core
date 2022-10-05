@@ -1,4 +1,4 @@
-# HoneyHNYP v3 - Pods Smart Contracts
+# HoneyPool - Smart Contracts
 
 The smart contracts are a smart contract collection for HoneyPool.
 
