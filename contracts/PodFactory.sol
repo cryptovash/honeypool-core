@@ -1,8 +1,8 @@
 // SPDX-License-Identifier: MIT
-pragma solidity >=0.7.0 <0.8.0;
+pragma solidity >=0.6.0 <0.7.0;
 
 // Libraries
-import "./external/ProxyFactory.sol";
+import "./external/openzeppelin/ProxyFactory.sol";
 
 // Internal Interfaces
 import "./TokenDropFactory.sol";

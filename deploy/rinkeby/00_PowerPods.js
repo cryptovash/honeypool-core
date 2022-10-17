@@ -17,7 +17,7 @@ module.exports = async ({ getNamedAccounts, deployments, getChainId }) => {
   const chainId = await getChainId();
 
   // Check ChainID (Rinkeby)
-  if (chainId == 4) {
+  if (chainId == 5) {
     // Create DAI Pod
     const createDAI = await execute(
       "PodFactory",

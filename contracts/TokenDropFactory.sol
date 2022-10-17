@@ -5,7 +5,7 @@ pragma solidity >=0.7.0 <0.8.0;
 import "@openzeppelin/contracts-upgradeable/token/ERC20/IERC20Upgradeable.sol";
 
 // Libraries
-import "./external/ProxyFactory.sol";
+import "./external/openzeppelin/ProxyFactory.sol";
 
 // Clone Contracts
 import "./Pod.sol";

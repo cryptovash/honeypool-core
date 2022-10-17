@@ -42,7 +42,8 @@
     "solium": "^1.2.5"
   },
   "dependencies": {
-    "@openzeppelin/contracts-upgradeable": "^3.4.0",
+    "@openzeppelin/contracts": "^4.7.3",
+    "@openzeppelin/contracts-upgradeable": "^3.4.2",
     "@pooltogether/fixed-point": "^1.0.0",
     "solhint": "3.0.0"
   }

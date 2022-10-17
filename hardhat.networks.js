@@ -9,6 +9,11 @@ const networks = {
     blockGasLimit: 200000000,
     allowUnlimitedContractSize: true,
   },
+  goerli: {
+    url: "https://goerli.infura.io/v3/a3d84ca201954c2e9a5185f216db98e8",
+    blockGasLimit: 200000000,
+    allowUnlimitedContractSize: true,
+  }
 };
 
 /* --- Hardhat Node Configuration --- */
@@ -58,9 +63,9 @@ if (process.env.INFURA_API_KEY && process.env.MNEMONIC_TESTNET) {
     },
   };
 
-  networks.rinkeby = {
+  networks.goerli = {
     gasPrice: 10000000000,
-    url: `https://rinkeby.infura.io/v3/${process.env.INFURA_API_KEY}`,
+    url: `https://goerli.infura.io/v3/${process.env.INFURA_API_KEY}`,
     accounts: {
       mnemonic: process.env.MNEMONIC_TESTNET,
     },

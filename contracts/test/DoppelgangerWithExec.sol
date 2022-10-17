@@ -1,4 +1,4 @@
-pragma solidity >=0.7.0 <0.8.0;
+pragma solidity >=0.6.0 <0.7.0;
 
 /* solium-disable security/no-inline-assembly */
 contract DoppelgangerWithExec {
@@ -27,9 +27,7 @@ contract DoppelgangerWithExec {
         });
     }
 
-    function __waffle__mockReturns(bytes memory data, bytes memory value)
-        public
-    {
+    function __waffle__mockReturns(bytes memory data, bytes memory value) public {
         mockConfig[keccak256(data)] = MockCall({
             initialized: true,
             reverts: false,
@@ -37,30 +35,19 @@ contract DoppelgangerWithExec {
         });
     }
 
-    function __waffle__call(address target, bytes calldata data)
-        external
-        returns (bytes memory)
-    {
-        (bool succeeded, bytes memory returnValue) = target.call(data);
-        require(succeeded, string(returnValue));
-        return returnValue;
+    function __waffle__call(address target, bytes calldata data) external returns (bytes memory) {
+      (bool succeeded, bytes memory returnValue) = target.call(data);
+      require(succeeded, string(returnValue));
+      return returnValue;
     }
 
-    function __waffle__staticcall(address target, bytes calldata data)
-        external
-        view
-        returns (bytes memory)
-    {
-        (bool succeeded, bytes memory returnValue) = target.staticcall(data);
-        require(succeeded, string(returnValue));
-        return returnValue;
+    function __waffle__staticcall(address target, bytes calldata data) external view returns (bytes memory) {
+      (bool succeeded, bytes memory returnValue) = target.staticcall(data);
+      require(succeeded, string(returnValue));
+      return returnValue;
     }
 
-    function __internal__getMockCall()
-        private
-        view
-        returns (MockCall storage mockCall)
-    {
+    function __internal__getMockCall() view private returns (MockCall storage mockCall) {
         mockCall = mockConfig[keccak256(msg.data)];
         if (mockCall.initialized == true) {
             // Mock method with specified arguments
@@ -74,13 +61,13 @@ contract DoppelgangerWithExec {
         revert("Mock on the method is not initialized");
     }
 
-    function __internal__mockReturn(bytes memory ret) private pure {
+    function __internal__mockReturn(bytes memory ret) pure private {
         assembly {
-            return(add(ret, 0x20), mload(ret))
+            return (add(ret, 0x20), mload(ret))
         }
     }
 
-    function __internal__mockRevert() private pure {
+    function __internal__mockRevert() pure private {
         revert("Mock revert");
     }
 }
