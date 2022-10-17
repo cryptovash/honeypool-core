@@ -1,4 +1,4 @@
-pragma solidity >=0.6.0 <0.7.0;
+pragma solidity >=0.7.0 <0.8.0;
 
 interface OpenZeppelinProxyFactoryInterface {
   function deploy(uint256 _salt, address _logic, address _admin, bytes calldata _data) external returns (address);
